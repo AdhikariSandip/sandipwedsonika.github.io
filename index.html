@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Eternal Love Story</title>
+    <title>Sandip & Sonika - Our Wedding</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Italiana&family=Lora:wght@400;600&display=swap');
 
         * {
             margin: 0;
@@ -13,89 +13,21 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary: #2c1810;
+            --accent-gold: #d4af37;
+            --accent-rose: #e8b4b8;
+            --cream: #faf8f3;
+            --sage: #a8b5a0;
+            --terracotta: #c9755c;
+        }
+
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Lora', serif;
+            background: var(--cream);
+            color: var(--primary);
             overflow-x: hidden;
-            background: #000;
-            color: #fff;
-        }
-
-        /* Particle Canvas */
-        #particles-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        /* Floating Elements */
-        .floating-elements {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        .floating-heart {
-            position: absolute;
-            animation: floatHeart 12s linear infinite;
-            opacity: 0;
-            font-size: 24px;
-            filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.8));
-        }
-
-        @keyframes floatHeart {
-            0% {
-                transform: translateY(100vh) translateX(0) rotate(0deg) scale(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-                transform: translateY(90vh) translateX(20px) rotate(45deg) scale(1);
-            }
-            50% {
-                transform: translateY(50vh) translateX(-30px) rotate(180deg) scale(1.2);
-            }
-            90% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-10vh) translateX(50px) rotate(360deg) scale(0);
-                opacity: 0;
-            }
-        }
-
-        .rose-petal {
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background: radial-gradient(ellipse at center, #ff69b4 0%, #ff1493 100%);
-            border-radius: 50% 0 50% 0;
-            animation: petalFall 15s linear infinite;
-            opacity: 0;
-        }
-
-        @keyframes petalFall {
-            0% {
-                transform: translateY(-10vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.7;
-            }
-            90% {
-                opacity: 0.7;
-            }
-            100% {
-                transform: translateY(110vh) rotate(720deg);
-                opacity: 0;
-            }
+            line-height: 1.6;
         }
 
         /* Hero Section */
@@ -104,320 +36,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
             position: relative;
-            background: radial-gradient(ellipse at center, #1a0033 0%, #000000 100%);
+            background: linear-gradient(135deg, #faf8f3 0%, #f5e6d3 50%, #e8d5c4 100%);
             overflow: hidden;
         }
 
         .hero::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(255, 105, 180, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(138, 43, 226, 0.15) 0%, transparent 50%);
-            animation: dreamWave 20s ease-in-out infinite;
-        }
-
-        @keyframes dreamWave {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(-50px, 50px) rotate(120deg); }
-            66% { transform: translate(50px, -50px) rotate(240deg); }
-        }
-
-        .heart-container {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            animation: heartBeat 3s ease-in-out infinite;
-        }
-
-        @keyframes heartBeat {
-            0%, 100% { transform: scale(1); }
-            10% { transform: scale(1.1); }
-            20% { transform: scale(1); }
-            30% { transform: scale(1.15); }
-            40% { transform: scale(1); }
-        }
-
-        .heart-shape {
-            position: relative;
-            width: 200px;
-            height: 180px;
-            margin: 50px auto;
-            filter: drop-shadow(0 0 50px rgba(255, 105, 180, 0.8));
-        }
-
-        .heart-shape::before,
-        .heart-shape::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            width: 100px;
-            height: 160px;
-            background: linear-gradient(135deg, #ff69b4, #ff1493, #c71585);
-            border-radius: 100px 100px 0 0;
-        }
-
-        .heart-shape::before {
-            left: 50px;
-            transform: rotate(-45deg);
-            transform-origin: 0 100%;
-        }
-
-        .heart-shape::after {
-            left: 0;
-            transform: rotate(45deg);
-            transform-origin: 100% 100%;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            animation: fadeInUp 2s ease;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 7rem;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, #ff69b4, #ff1493, #c71585, #ff69b4);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: shimmer 4s ease-in-out infinite;
-            filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.5));
-        }
-
-        @keyframes shimmer {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .hero p {
-            font-size: 1.8rem;
-            color: #ff69b4;
-            letter-spacing: 3px;
-            animation: glow 2s ease-in-out infinite;
-        }
-
-        @keyframes glow {
-            0%, 100% { text-shadow: 0 0 10px rgba(255, 105, 180, 0.5); }
-            50% { text-shadow: 0 0 20px rgba(255, 105, 180, 1); }
-        }
-
-        .date-banner {
-            margin-top: 30px;
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: #fff;
-            padding: 20px 40px;
-            background: rgba(255, 105, 180, 0.1);
-            border: 2px solid rgba(255, 105, 180, 0.5);
-            border-radius: 50px;
-            backdrop-filter: blur(10px);
-            display: inline-block;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 120px 20px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .section-divider {
-            text-align: center;
-            margin: 60px 0;
-        }
-
-        .divider-heart {
-            display: inline-block;
-            font-size: 3rem;
-            animation: heartPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes heartPulse {
-            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.5)); }
-            50% { transform: scale(1.2); filter: drop-shadow(0 0 30px rgba(255, 105, 180, 1)); }
-        }
-
-        h2 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 5rem;
-            text-align: center;
-            margin-bottom: 80px;
-            background: linear-gradient(90deg, #ff69b4, #ff1493);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: titleFloat 3s ease-in-out infinite;
-        }
-
-        @keyframes titleFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* Timeline */
-        .timeline-section {
-            background: radial-gradient(ellipse at center, #0d001a 0%, #000000 100%);
-        }
-
-        .timeline {
-            max-width: 1100px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(to bottom, transparent, #ff69b4, #ff1493, #ff69b4, transparent);
-            transform: translateX(-50%);
-            animation: lineGlow 3s ease-in-out infinite;
-        }
-
-        @keyframes lineGlow {
-            0%, 100% { box-shadow: 0 0 20px rgba(255, 105, 180, 0.5); }
-            50% { box-shadow: 0 0 40px rgba(255, 105, 180, 1); }
-        }
-
-        .event {
-            display: flex;
-            margin-bottom: 100px;
-            position: relative;
-            opacity: 0;
-            animation: slideInView 1s forwards;
-        }
-
-        @keyframes slideInView {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .event:nth-child(1) { animation-delay: 0.3s; transform: translateX(-100px); }
-        .event:nth-child(2) { animation-delay: 0.6s; transform: translateX(100px); }
-        .event:nth-child(3) { animation-delay: 0.9s; transform: translateX(-100px); }
-
-        .event:nth-child(odd) {
-            flex-direction: row-reverse;
-        }
-
-        .event::before {
-            content: '💕';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 2rem;
-            width: 60px;
-            height: 60px;
-            background: radial-gradient(circle, #ff1493, #c71585);
-            border: 4px solid #000;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2;
-            box-shadow: 0 0 30px rgba(255, 20, 147, 0.8);
-            animation: iconSpin 10s linear infinite;
-        }
-
-        @keyframes iconSpin {
-            0%, 100% { transform: translateX(-50%) rotate(0deg) scale(1); }
-            50% { transform: translateX(-50%) rotate(180deg) scale(1.2); }
-        }
-
-        .event-content {
-            width: 45%;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            padding: 50px;
-            border-radius: 30px;
-            border: 2px solid transparent;
-            background-clip: padding-box;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s ease;
-        }
-
-        .event-content::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            background: linear-gradient(45deg, #ff69b4, #ff1493, #c71585, #ff69b4);
-            background-size: 400% 400%;
-            border-radius: 30px;
-            z-index: -1;
-            animation: borderGlow 6s ease infinite;
-        }
-
-        @keyframes borderGlow {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .event-content::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.85);
-            border-radius: 28px;
-            z-index: -1;
-        }
-
-        .event-content:hover {
-            transform: translateY(-15px) scale(1.03);
-            box-shadow: 0 30px 80px rgba(255, 20, 147, 0.5);
-        }
-
-        .event h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #ff69b4;
-            margin-bottom: 15px;
-        }
-
-        .event-date {
-            font-size: 1.2rem;
-            color: #ff1493;
-            margin-bottom: 25px;
-            font-style: italic;
-        }
-
-        .event p {
-            color: #e8e8e8;
-            font-size: 1.1rem;
-            line-height: 1.9;
-        }
-
-        /* Love Story */
-        .love-story {
-            background: radial-gradient(ellipse at center, #1a0033 0%, #000000 100%);
-            position: relative;
-        }
-
-        .love-story::before {
             content: '';
             position: absolute;
             top: 0;
@@ -425,420 +49,558 @@
             right: 0;
             bottom: 0;
             background-image: 
-                radial-gradient(2px 2px at 20% 30%, rgba(255, 105, 180, 0.3), transparent),
-                radial-gradient(2px 2px at 60% 70%, rgba(255, 105, 180, 0.3), transparent),
-                radial-gradient(1px 1px at 50% 50%, rgba(255, 105, 180, 0.3), transparent),
-                radial-gradient(2px 2px at 80% 10%, rgba(255, 105, 180, 0.3), transparent);
-            background-size: 200px 200px, 300px 300px, 150px 150px, 250px 250px;
-            animation: sparkle 10s linear infinite;
+                radial-gradient(circle at 20% 80%, rgba(168, 181, 160, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(201, 117, 92, 0.08) 0%, transparent 50%);
+            animation: ambientShift 20s ease-in-out infinite;
         }
 
-        @keyframes sparkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.8; }
+        @keyframes ambientShift {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
         }
 
-        .story-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(30px);
-            padding: 80px 60px;
-            border-radius: 50px;
-            border: 3px solid rgba(255, 105, 180, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .story-container::before {
-            content: '💖';
-            position: absolute;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 4rem;
-            animation: heartFloat 3s ease-in-out infinite;
-        }
-
-        @keyframes heartFloat {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-20px); }
-        }
-
-        .story-text {
+        .hero-content {
             text-align: center;
-            font-size: 1.4rem;
-            line-height: 2.3;
-            color: #f0f0f0;
+            z-index: 10;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-names {
+            font-family: 'Italiana', serif;
+            font-size: clamp(3rem, 8vw, 7rem);
+            color: var(--primary);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
             position: relative;
-            z-index: 1;
         }
 
-        .story-text p {
-            margin-bottom: 30px;
-        }
-
-        .love-quote {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.5rem;
-            color: #ff69b4;
-            margin: 40px 0;
+        .hero-names::after {
+            content: '&';
+            display: block;
+            font-size: 0.6em;
+            color: var(--accent-gold);
+            margin: 0.3em 0;
             font-style: italic;
         }
 
-        /* Photo Gallery */
-        .photo-section {
-            background: radial-gradient(ellipse at center, #0d001a 0%, #000000 100%);
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: var(--terracotta);
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
         }
 
-        .photo-gallery {
+        .hero-date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--sage);
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+
+        /* Decorative Elements */
+        .floral-divider {
+            text-align: center;
+            margin: 4rem 0;
+            position: relative;
+        }
+
+        .floral-divider::before,
+        .floral-divider::after {
+            content: '◆';
+            color: var(--accent-gold);
+            font-size: 1rem;
+            margin: 0 1rem;
+        }
+
+        .floral-divider span {
+            color: var(--accent-rose);
+            font-size: 2rem;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: 'Italiana', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            letter-spacing: 0.05em;
+        }
+
+        /* Love Story Section */
+        .love-story {
+            background: linear-gradient(to bottom, var(--cream), #f5f0e8);
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .story-content p {
+            font-size: 1.3rem;
+            line-height: 2;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .story-highlight {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            color: var(--terracotta);
+            margin: 3rem 0;
+            font-weight: 600;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            background: var(--cream);
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .event {
+            background: white;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border-radius: 0;
+            box-shadow: 0 10px 40px rgba(44, 24, 16, 0.08);
+            position: relative;
+            border-left: 4px solid var(--accent-gold);
+            transition: all 0.4s ease;
+        }
+
+        .event:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 50px rgba(44, 24, 16, 0.12);
+        }
+
+        .event-icon {
+            position: absolute;
+            left: -2rem;
+            top: 3rem;
+            width: 3rem;
+            height: 3rem;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .event h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .event-date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--terracotta);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .event p {
+            color: var(--primary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.85;
+        }
+
+        /* Photo Gallery */
+        .gallery-section {
+            background: linear-gradient(to bottom, #f5f0e8, var(--cream));
+        }
+
+        .photo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             max-width: 1400px;
             margin: 0 auto;
         }
 
         .photo-item {
             position: relative;
-            aspect-ratio: 1;
-            border-radius: 30px;
+            aspect-ratio: 3/4;
             overflow: hidden;
-            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 50%, #c71585 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            cursor: pointer;
-        }
-
-        .photo-item::before {
-            content: '';
-            position: absolute;
-            inset: -5px;
-            background: linear-gradient(45deg, #ff69b4, #ff1493, #c71585, #ff69b4);
-            background-size: 400% 400%;
-            border-radius: 35px;
-            z-index: -1;
-            animation: photoGlow 8s ease infinite;
-            opacity: 0;
-            transition: opacity 0.6s ease;
-        }
-
-        @keyframes photoGlow {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .photo-item:hover::before {
-            opacity: 1;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(44, 24, 16, 0.1);
+            transition: all 0.5s ease;
         }
 
         .photo-item:hover {
-            transform: scale(1.08) rotate(3deg);
-            box-shadow: 0 30px 90px rgba(255, 20, 147, 0.7);
-            z-index: 10;
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(44, 24, 16, 0.2);
         }
 
-        .photo-item:nth-child(even):hover {
-            transform: scale(1.08) rotate(-3deg);
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Location Section */
+        .location-section {
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .map-container {
+            max-width: 900px;
+            margin: 3rem auto;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(44, 24, 16, 0.15);
+            border: 10px solid white;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            display: block;
+        }
+
+        .venue-info {
+            max-width: 700px;
+            margin: 3rem auto 0;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 10px 30px rgba(44, 24, 16, 0.08);
+        }
+
+        .venue-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .venue-info p {
+            font-size: 1.1rem;
+            color: var(--primary);
+            opacity: 0.85;
         }
 
         /* Footer */
         footer {
-            background: linear-gradient(to top, #000000, #0d001a);
+            background: linear-gradient(to top, var(--primary), #3d2517);
+            color: var(--cream);
             text-align: center;
-            padding: 80px 20px;
-            position: relative;
+            padding: 4rem 2rem;
         }
 
-        .footer-heart {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            display: inline-block;
-            animation: heartBeat 2s ease-in-out infinite;
+        .footer-content p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            opacity: 0.9;
         }
 
-        footer p {
-            font-size: 1.6rem;
-            color: #ff69b4;
-            margin: 15px 0;
-            font-family: 'Playfair Display', serif;
+        .footer-names {
+            font-family: 'Italiana', serif;
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin: 2rem 0;
+            letter-spacing: 0.1em;
         }
 
-        .couple-names {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3rem;
-            background: linear-gradient(90deg, #ff69b4, #ff1493);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .footer-quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 2rem auto;
+            opacity: 0.8;
         }
 
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 4rem;
-            }
-
-            h2 {
-                font-size: 3.5rem;
-            }
-
-            .timeline::before {
-                left: 30px;
-            }
-
             .event {
-                flex-direction: column !important;
-                padding-left: 80px;
+                padding: 2rem;
+                border-left: none;
+                border-top: 4px solid var(--accent-gold);
             }
 
-            .event-content {
-                width: 100%;
+            .event-icon {
+                left: 50%;
+                transform: translateX(-50%);
+                top: -1.5rem;
             }
 
-            .event::before {
-                left: 30px;
+            .event:hover {
+                transform: translateY(-5px);
             }
 
-            .heart-shape {
-                width: 150px;
-                height: 135px;
+            .map-container iframe {
+                height: 350px;
             }
 
-            .heart-shape::before,
-            .heart-shape::after {
-                width: 75px;
-                height: 120px;
-            }
-
-            .heart-shape::before {
-                left: 37px;
+            .photo-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <canvas id="particles-canvas"></canvas>
-    <div class="floating-elements" id="floating-elements"></div>
-
+    <!-- Hero Section -->
     <div class="hero">
-        <div class="heart-container">
-            <div class="heart-shape"></div>
-        </div>
         <div class="hero-content">
-            <h1>We're Getting Married!</h1>
-            <p>✨ OUR ETERNAL LOVE STORY ✨</p>
-            <div class="date-banner">[Add Your Wedding Date]</div>
+            <div class="hero-names">
+                Sandip
+                Sonika
+            </div>
+            <p class="hero-subtitle">We're Getting Married</p>
+            <p class="hero-date">February 20, 2026</p>
         </div>
     </div>
 
-    <div class="section-divider">
-        <span class="divider-heart">💕</span>
+    <div class="floral-divider">
+        <span>✦</span>
     </div>
 
-    <section class="timeline-section">
-        <h2>Our Journey of Love</h2>
-        <div class="timeline">
-            <div class="event">
-                <div class="event-content">
-                    <h3>🌸 Mehndi Ceremony 🌸</h3>
-                    <p class="event-date">Date: [Add Your Date]</p>
-                    <p>Join us for an enchanting evening where henna adorns hands and hearts unite in celebration. Let the colors of love paint our story as we dance into forever.</p>
-                    <p style="margin-top: 20px;"><strong>Time:</strong> [Add Time]</p>
-                    <p><strong>Venue:</strong> [Add Venue]</p>
-                    <p style="margin-top: 20px; font-style: italic; color: #ff69b4;">"Where traditions meet love, and every pattern tells our tale"</p>
-                </div>
-            </div>
-
-            <div class="event">
-                <div class="event-content">
-                    <h3>💍 Wedding Ceremony 💍</h3>
-                    <p class="event-date">Date: [Add Your Date]</p>
-                    <p>Witness the magic as two souls become one. In this sacred moment, surrounded by love and blessings, we promise forever. Be part of our most precious chapter.</p>
-                    <p style="margin-top: 20px;"><strong>Time:</strong> [Add Time]</p>
-                    <p><strong>Venue:</strong> [Add Venue]</p>
-                    <p style="margin-top: 20px; font-style: italic; color: #ff69b4;">"Two hearts, one promise, infinite love"</p>
-                </div>
-            </div>
-
-            <div class="event">
-                <div class="event-content">
-                    <h3>🎉 Reception Celebration 🎉</h3>
-                    <p class="event-date">Date: [Add Your Date]</p>
-                    <p>Dance under the stars as we celebrate love, laughter, and happily ever after. Join us for an unforgettable night of joy, music, and magical memories.</p>
-                    <p style="margin-top: 20px;"><strong>Time:</strong> [Add Time]</p>
-                    <p><strong>Venue:</strong> [Add Venue]</p>
-                    <p style="margin-top: 20px; font-style: italic; color: #ff69b4;">"Let's dance into our forever together"</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="section-divider">
-        <span class="divider-heart">💖</span>
-    </div>
-
+    <!-- Love Story Section -->
     <section class="love-story">
-        <h2>Our Love Story</h2>
-        <div class="story-container">
-            <div class="story-text">
+        <div class="container">
+            <h2>Our Love Story</h2>
+            <div class="story-content">
                 <p>
-                    ✨ [This is where your beautiful love story begins... Share the magical moment when your eyes first met, 
-                    when time stood still and the world faded away. Tell us about that first conversation, 
-                    that first laugh, that moment when you knew this was something special.] ✨
+                    Three years ago, our paths crossed and something magical happened. 
+                    In that first moment, we knew this was the beginning of something beautiful, 
+                    something that would change our lives forever.
                 </p>
-                <p class="love-quote">
-                    "In a sea of people, my eyes will always search for you"
-                </p>
-                <p>
-                    💕 [Continue your journey... the adventures you've shared, the quiet moments that meant everything, 
-                    the challenges you conquered together. Every sunrise witnessed, every dream shared, 
-                    every promise whispered in the moonlight. This is your fairy tale - tell it from the heart.] 💕
-                </p>
-                <p class="love-quote">
-                    "Together is our favorite place to be"
+                <p class="story-highlight">
+                    "From that day to this, we've been creating our own world together"
                 </p>
                 <p>
-                    💖 [And now, your forever begins... Share the proposal story, that perfect moment when forever 
-                    became a promise. How did you know? What made this love different? 
-                    Paint the picture of your journey to this beautiful day.] 💖
+                    Through laughter and tears, adventures and quiet moments, 
+                    we've built a love that grows stronger with each passing day. 
+                    We've learned that home isn't a place—it's the feeling we create when we're together.
+                </p>
+                <p>
+                    Now, we're ready to begin our greatest adventure yet. 
+                    Join us as we promise forever to each other and celebrate the love that brought us here.
                 </p>
             </div>
         </div>
     </section>
 
-    <div class="section-divider">
-        <span class="divider-heart">💝</span>
+    <div class="floral-divider">
+        <span>✦</span>
     </div>
 
-    <section class="photo-section">
-        <h2>Captured Moments</h2>
-        <div class="photo-gallery">
-            <div class="photo-item">
-                <div>📸 Photo 1<br><small>[Add your cherished memory]</small></div>
-            </div>
-            <div class="photo-item">
-                <div>📸 Photo 2<br><small>[Add your cherished memory]</small></div>
-            </div>
-            <div class="photo-item">
-                <div>📸 Photo 3<br><small>[Add your cherished memory]</small></div>
-            </div>
-            <div class="photo-item">
-                <div>📸 Photo 4<br><small>[Add your cherished memory]</small></div>
-            </div>
-            <div class="photo-item">
-                <div>📸 Photo 5<br><small>[Add your cherished memory]</small></div>
-            </div>
-            <div class="photo-item">
-                <div>📸 Photo 6<br><small>[Add your cherished memory]</small></div>
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2>Wedding Events</h2>
+            <div class="timeline">
+                <div class="event fade-in">
+                    <div class="event-icon">🌸</div>
+                    <h3>Mehendi Ceremony</h3>
+                    <p class="event-date">February 19, 2026 • Falgun 7, 2082</p>
+                    <p>
+                        Join us for an evening of henna, music, and celebration as we begin our wedding festivities. 
+                        Watch as intricate patterns tell our story and traditional songs fill the air with joy.
+                    </p>
+                </div>
+
+                <div class="event fade-in" style="animation-delay: 0.2s;">
+                    <div class="event-icon">💍</div>
+                    <h3>Wedding Ceremony</h3>
+                    <p class="event-date">February 20, 2026 • Falgun 8, 2082</p>
+                    <p>
+                        Our most sacred moment. Witness our union as we exchange vows and begin our journey as one. 
+                        Surrounded by blessings and love, we promise forever in the presence of our families and friends.
+                    </p>
+                </div>
+
+                <div class="event fade-in" style="animation-delay: 0.4s;">
+                    <div class="event-icon">🎉</div>
+                    <h3>Reception Celebration</h3>
+                    <p class="event-date">February 21, 2026 • Falgun 9, 2082</p>
+                    <p>
+                        Dance the night away with us! Celebrate our new beginning with music, laughter, and memories 
+                        that will last a lifetime. Let's make this a night to remember together.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
+    <div class="floral-divider">
+        <span>✦</span>
+    </div>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2>Our Journey in Pictures</h2>
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-01-29_at_13_29_46.jpeg" alt="Sandip">
+                </div>
+                <div class="photo-item">
+                    <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-01-30_at_08_11_50.jpeg" alt="Sonika">
+                </div>
+                <div class="photo-item">
+                    <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-01-30_at_08_13_14.jpeg" alt="Sonika">
+                </div>
+                <div class="photo-item">
+                    <img src="/mnt/user-data/uploads/Snapchat-1563208938.jpg" alt="Sandip and Sonika">
+                </div>
+                <div class="photo-item">
+                    <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-01-29_at_13_31_36.jpeg" alt="Sonika">
+                </div>
+                <div class="photo-item">
+                    <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-01-29_at_13_33_55.jpeg" alt="Sonika">
+                </div>
+                <div class="photo-item">
+                    <img src="/mnt/user-data/uploads/WhatsApp_Image_2026-01-30_at_07_38_11.jpeg" alt="Sandip and Sonika">
+                </div>
+                <div class="photo-item">
+                    <img src="/mnt/user-data/uploads/IMG_20250925_160835.jpg" alt="Sonika">
+                </div>
+                <div class="photo-item">
+                    <img src="/mnt/user-data/uploads/IMG_20250926_124911.jpg" alt="Sonika">
+                </div>
+                <div class="photo-item">
+                    <img src="/mnt/user-data/uploads/IMG_20250926_125338.jpg" alt="Sandip">
+                </div>
+                <div class="photo-item">
+                    <img src="/mnt/user-data/uploads/IMG_20251008_113353.jpg" alt="Sandip">
+                </div>
+                <div class="photo-item">
+                    <img src="/mnt/user-data/uploads/IMG_20250925_160644.jpg" alt="Sandip">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="floral-divider">
+        <span>✦</span>
+    </div>
+
+    <!-- Location Section -->
+    <section class="location-section">
+        <div class="container">
+            <h2>Wedding Venue</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d427.65427598045085!2d84.52322679225077!3d27.687084733516244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2snp!4v1770859914491!5m2!1sen!2snp" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="venue-info">
+                <h3>Join Us At</h3>
+                <p>
+                    Our celebration venue in the heart of Nepal. 
+                    We can't wait to share this special day with you at this beautiful location.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <div class="footer-heart">💕</div>
-        <p>We can't wait to celebrate our love with you!</p>
-        <p style="margin-top: 25px;">Forever begins here...</p>
-        <p class="couple-names" style="margin-top: 30px;">[Your Names] 💖</p>
-        <p style="margin-top: 30px; font-size: 1.2rem; color: #ff69b4;">
-            "And they lived happily ever after..."
-        </p>
+        <div class="footer-content">
+            <p>We Can't Wait to Celebrate With You</p>
+            <div class="footer-names">Sandip & Sonika</div>
+            <p class="footer-quote">
+                "Three years of love, laughter, and creating our own world. 
+                Now begins our forever."
+            </p>
+            <p style="margin-top: 3rem; font-size: 1rem; opacity: 0.7;">
+                February 2026 • Nepal
+            </p>
+        </div>
     </footer>
 
     <script>
-        // Particle Canvas Animation
-        const canvas = document.getElementById('particles-canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        // Fade in elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
 
-        const particles = [];
-        const particleCount = 150;
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 3 + 1;
-                this.speedX = Math.random() * 1 - 0.5;
-                this.speedY = Math.random() * 1 - 0.5;
-                this.opacity = Math.random() * 0.5 + 0.2;
-            }
-
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-
-                if (this.x > canvas.width) this.x = 0;
-                if (this.x < 0) this.x = canvas.width;
-                if (this.y > canvas.height) this.y = 0;
-                if (this.y < 0) this.y = canvas.height;
-            }
-
-            draw() {
-                ctx.fillStyle = `rgba(255, 105, 180, ${this.opacity})`;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new Particle());
-        }
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
             });
-            requestAnimationFrame(animateParticles);
-        }
+        }, observerOptions);
 
-        animateParticles();
-
-        // Floating Hearts and Petals
-        const floatingContainer = document.getElementById('floating-elements');
-        const hearts = ['💕', '💖', '💗', '💝', '💓', '💞', '💘', '❤️', '🌹'];
-
-        function createFloatingElement() {
-            const isHeart = Math.random() > 0.3;
-            const element = document.createElement('div');
-            
-            if (isHeart) {
-                element.className = 'floating-heart';
-                element.textContent = hearts[Math.floor(Math.random() * hearts.length)];
-            } else {
-                element.className = 'rose-petal';
-            }
-            
-            element.style.left = Math.random() * 100 + '%';
-            element.style.animationDuration = (8 + Math.random() * 8) + 's';
-            element.style.animationDelay = Math.random() * 5 + 's';
-            
-            floatingContainer.appendChild(element);
-            
-            setTimeout(() => {
-                element.remove();
-            }, 15000);
-        }
-
-        setInterval(createFloatingElement, 800);
-        for (let i = 0; i < 10; i++) {
-            setTimeout(createFloatingElement, i * 300);
-        }
-
-        // Resize canvas on window resize
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+        document.querySelectorAll('.event, .photo-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease';
+            observer.observe(el);
         });
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
