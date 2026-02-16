@@ -884,6 +884,21 @@
         });
     </script>
 
+    <!-- Background Music (autoplay + muted to bypass browser policy, unmuted via JS) -->
+    <audio id="bgMusic" src="assets/song.mp3" loop autoplay preload="auto"></audio>
+
+    <!-- Welcome Overlay — guarantees music plays on first tap (mobile) -->
+    <div id="welcomeOverlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(44,24,16,0.88);z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;cursor:pointer;backdrop-filter:blur(6px);opacity:1;transition:opacity 0.6s ease;">
+        <div style="text-align:center;color:#faf8f3;">
+            <p style="font-family:'Italiana',serif;font-size:clamp(2rem,5vw,3.5rem);color:#d4af37;margin-bottom:0.5rem;letter-spacing:0.05em;">Sandip & Sonika</p>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,3vw,1.4rem);color:#e8b4b8;margin-bottom:2rem;letter-spacing:0.2em;">WE'RE GETTING MARRIED</p>
+            <div style="width:70px;height:70px;border-radius:50%;border:2px solid #d4af37;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;animation:musicPulse 1.5s ease-in-out infinite;">
+                <span style="font-size:1.8rem;color:#d4af37;">&#9654;</span>
+            </div>
+            <p style="font-family:'Lora',serif;font-size:0.95rem;opacity:0.7;color:#faf8f3;">Tap anywhere to enter</p>
+        </div>
+    </div>
+
     <!-- Music Player -->
     <div class="music-player">
         <div class="equalizer" id="equalizer">
@@ -991,48 +1006,65 @@
         }
 
         // ===== 3. MUSIC PLAYER =====
-        var audio = new Audio('assets/music.mp3');
-        audio.loop = true;
+        var audio = document.getElementById('bgMusic');
         audio.volume = 0.5;
         var musicBtn = document.getElementById('musicBtn');
         var equalizer = document.getElementById('equalizer');
+        var overlay = document.getElementById('welcomeOverlay');
         var isPlaying = false;
+        var overlayDismissed = false;
 
-        function startMusic() {
-            if (isPlaying) return;
-            audio.play().then(function() {
-                isPlaying = true;
-                musicBtn.classList.add('playing');
-                musicBtn.innerHTML = '\u23F8';
-                equalizer.classList.add('active');
-            }).catch(function() {});
+        function setPlayingUI() {
+            isPlaying = true;
+            musicBtn.classList.add('playing');
+            musicBtn.innerHTML = '\u23F8';
+            equalizer.classList.add('active');
         }
 
-        function stopMusic() {
-            audio.pause();
+        function setPausedUI() {
             isPlaying = false;
             musicBtn.classList.remove('playing');
             musicBtn.innerHTML = '\u266B';
             equalizer.classList.remove('active');
         }
 
-        // Try autoplay immediately
-        startMusic();
-
-        // If autoplay was blocked, start on first user interaction
-        var interactionEvents = ['click', 'touchstart', 'scroll', 'keydown'];
-        function onFirstInteraction() {
-            startMusic();
-            interactionEvents.forEach(function(evt) {
-                document.removeEventListener(evt, onFirstInteraction, { capture: true });
-            });
+        function startMusic() {
+            if (isPlaying) return;
+            audio.muted = false;
+            audio.play().then(setPlayingUI).catch(function() {});
         }
-        interactionEvents.forEach(function(evt) {
-            document.addEventListener(evt, onFirstInteraction, { capture: true, passive: true });
+
+        function stopMusic() {
+            audio.pause();
+            setPausedUI();
+        }
+
+        function dismissOverlay() {
+            if (overlayDismissed) return;
+            overlayDismissed = true;
+            startMusic();
+            overlay.style.opacity = '0';
+            overlay.style.pointerEvents = 'none';
+            setTimeout(function() { overlay.style.display = 'none'; }, 600);
+        }
+
+        // Try autoplay immediately (works on some browsers)
+        audio.muted = false;
+        audio.play().then(function() {
+            setPlayingUI();
+            // Autoplay succeeded — dismiss overlay immediately
+            dismissOverlay();
+        }).catch(function() {
+            // Autoplay blocked — show overlay, wait for user tap
         });
 
+        // Overlay click = guaranteed play
+        overlay.addEventListener('click', dismissOverlay);
+        overlay.addEventListener('touchstart', dismissOverlay, { passive: true });
+
         // Toggle button
-        musicBtn.addEventListener('click', function() {
+        musicBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
             if (isPlaying) { stopMusic(); } else { startMusic(); }
         });
 
